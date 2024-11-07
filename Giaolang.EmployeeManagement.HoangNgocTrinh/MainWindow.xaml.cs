@@ -1,5 +1,6 @@
 ﻿using Giaolang.EmployeeManagement.BLL.Services;
 using Giaolang.EmployeeManagement.DAL.Entities;
+using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -92,7 +93,15 @@ namespace Giaolang.EmployeeManagement.HoangNgocTrinh
             string EmployeeName = EmployeeNameTextBox.Text;
             string EmployeeSalary = SalaryTextBox.Text;
 
+            bool convertStatus = decimal.TryParse(EmployeeSalary, out decimal Salary);
 
+            if (!convertStatus && !EmployeeSalary.IsNullOrEmpty())
+            {
+                MessageBox.Show("Salary Must Be A Number!!", "Require Information", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            FillDataGridEmpoyeeDataGrid(_EmployService.SearchEmployeeByNameAndSalary(EmployeeName, EmployeeSalary));
 
         }
     }
