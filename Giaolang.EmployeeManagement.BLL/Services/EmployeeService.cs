@@ -1,0 +1,38 @@
+﻿using Giaolang.EmployeeManagement.DAL.Entities;
+using Giaolang.EmployeeManagement.DAL.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Giaolang.EmployeeManagement.BLL.Services
+{
+    public class EmployeeService
+    {
+
+        // GUI -- Service -- Repo -- DBContext -- Table
+        private EmployeeRepository _EmployRepo = new();
+
+        public List<EmployeeRecord> GetAllEmployee()
+        {
+            return _EmployRepo.GetAll();
+        }
+
+        public void CreateEmployee(EmployeeRecord obj)
+        {
+            _EmployRepo.AddEmployee(obj);
+        }
+
+        public void UpdateEmployee(EmployeeRecord obj)
+        {
+            _EmployRepo.UpdateEmployee(obj);
+        }
+
+        public void DeleteEmployee(EmployeeRecord obj) 
+        { 
+            _EmployRepo.DeleteEmployee(obj);
+        }
+
+    }
+}
