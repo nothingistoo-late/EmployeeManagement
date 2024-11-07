@@ -1,5 +1,6 @@
 ﻿using Giaolang.EmployeeManagement.DAL.Entities;
 using Giaolang.EmployeeManagement.DAL.Repositories;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,13 @@ namespace Giaolang.EmployeeManagement.BLL.Services
         public void DeleteEmployee(EmployeeRecord obj) 
         { 
             _EmployRepo.DeleteEmployee(obj);
+        }
+
+        public List<EmployeeRecord> SearchEmployeeByNameAndSalary(string name, string salary)
+        {
+            List<EmployeeRecord> results = _EmployRepo.GetAll().ToList();
+            
+            return results;
         }
 
     }

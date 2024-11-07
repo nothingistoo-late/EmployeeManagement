@@ -69,7 +69,10 @@ namespace Giaolang.EmployeeManagement.HoangNgocTrinh
 
         private void QuitButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBoxResult result = MessageBox.Show("Do You Really Want To Exit Program???", "Exit!!!", 
+                MessageBoxButton.OKCancel, MessageBoxImage.Question);
+            if (result == MessageBoxResult.OK)
+                Application.Current.Shutdown();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -82,6 +85,15 @@ namespace Giaolang.EmployeeManagement.HoangNgocTrinh
         {
             EmployeeDataGrid.ItemsSource = null;
             EmployeeDataGrid.ItemsSource = list;
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            string EmployeeName = EmployeeNameTextBox.Text;
+            string EmployeeSalary = SalaryTextBox.Text;
+
+
+
         }
     }
 }
