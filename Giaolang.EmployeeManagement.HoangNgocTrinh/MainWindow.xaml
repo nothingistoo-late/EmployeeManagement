@@ -26,12 +26,12 @@
                 " TabIndex="5" Click="DeleteButton_Click" />
         <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Height="50" Margin="714,540,0,0" VerticalAlignment="Top" Width="185" TabIndex="6" Click="QuitButton_Click" />
 
-        <DataGrid x:Name="EmployeeDataGrid" HorizontalAlignment="Left" Height="310" Margin="40,289,0,0" VerticalAlignment="Top" Width="595" AutoGenerateColumns="False" TabIndex="7" >
+        <DataGrid x:Name="EmployeeDataGrid" HorizontalAlignment="Left" Height="310" Margin="47,290,0,0" VerticalAlignment="Top" Width="595" AutoGenerateColumns="False" TabIndex="7" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="40" Binding="{Binding EmployeeId}" />
                 <DataGridTextColumn Header="Employee Name" Width="250" Binding="{Binding EmployeeName}" />
                 <DataGridTextColumn Header="Salary" Width="120" Binding="{Binding Salary}" />
-                <DataGridTextColumn Header="Hire Date" Width="100" Binding="{Binding HireDate}" />
+                <DataGridTextColumn Header="Hire Date" Width="185" Binding="{Binding HireDate}" />
 
             </DataGrid.Columns>
         </DataGrid>
